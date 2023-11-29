@@ -1,0 +1,236 @@
+#:kivy 2.0
+#:import images_path kivymd.images_path
+<MyLayout>
+    name: "adaptations"
+
+	MDBoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+        canvas:
+            Color:
+                rgb: root.bg_color
+            Rectangle:
+                size: self.size
+
+
+        MDBoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.15
+            MDBoxLayout:
+                adaptive_height: True
+                size_hint_x: 0.5
+                MDIconButton:
+                    icon: "volleyball"
+                    size_hint_x: 1
+            Widget:
+                size_hint_x: 0.2
+
+            MDBoxLayout:
+                adaptive_height: True
+
+                MDIconButton:
+                    icon: 'magnify'
+
+                MDTextField:
+                    id: search_field
+                    hint_text: 'Search bar'
+
+            Widget:
+                size_hint_x: 0.2
+            MDBoxLayout:
+                orientation:"vertical"
+                size_hint_x: 0.3
+                MDIconButton:
+                    size_hint_y: 2
+                    icon: "account"
+                MDLabel:
+                    text: "My-acc"
+                    color: root.color
+                    size_hint_y: 0.4
+            MDBoxLayout:
+                orientation:"vertical"
+                size_hint_x: 0.3
+                halign:
+                MDIconButton:
+                    size_hint_y: 2
+                    icon: "cart-outline"
+                MDLabel:
+                    text: "My-cart"
+                    color: root.color
+                    size_hint_y: 0.4
+            Widget:
+                size_hint_x: 0.2
+
+        MDBoxLayout:
+            orientation:"horizontal"
+            Widget:
+                size_hint_x: 0.05
+            MDBoxLayout:
+                id: "filter_section"
+                orientation: "vertical"
+                size_hint_x: 0.25
+                halign: 'left'
+                padding: 0, 0, 0, 100
+
+                MDLabel:
+                    id: "filter_heading"
+                    text:"Filters"
+                    color: root.color
+                    halign: 'left'
+                    valign: 'middle'
+                MDBoxLayout:
+                    orientation:"vertical"
+                    MDLabel:
+                        text: "Filtro A"
+                        color: root.color
+
+                    GridLayout:
+                        id: "Filter_A"
+                        cols: 2
+                        MDBoxLayout:
+                            orientation:"horizontal"
+                            MDLabel:
+                                text: "A"
+                                color: root.color
+                            MDCheckbox:
+                        MDBoxLayout:
+                            orientation:"horizontal"
+                            MDLabel:
+                                text: "B"
+                                color: root.color
+                            MDCheckbox:
+                        MDBoxLayout:
+                            orientation:"horizontal"
+                            MDLabel:
+                                text: "C"
+                                color: root.color
+                            MDCheckbox:
+                        MDBoxLayout:
+                            orientation:"horizontal"
+                            MDLabel:
+                                text: "D"
+                                color: root.color
+                            MDCheckbox:
+                MDBoxLayout:
+                    orientation:"vertical"
+                    MDLabel:
+                        text: "Filtro B"
+                        color: root.color
+
+                    GridLayout:
+                        id: "Filter_B"
+                        cols: 2
+                        MDBoxLayout:
+                            orientation:"horizontal"
+                            MDLabel:
+                                text: "A"
+                                color: root.color
+                            MDCheckbox:
+                        MDBoxLayout:
+                            orientation:"horizontal"
+                            MDLabel:
+                                text: "B"
+                                color: root.color
+                            MDCheckbox:
+                        MDBoxLayout:
+                            orientation:"horizontal"
+                            MDLabel:
+                                text: "C"
+                                color: root.color
+                            MDCheckbox:
+                        MDBoxLayout:
+                            orientation:"horizontal"
+                            MDLabel:
+                                text: "D"
+                                color: root.color
+                            MDCheckbox:
+                MDBoxLayout:
+                    orientation:"vertical"
+                    MDLabel:
+                        text: "Filtro C"
+                        color: root.color
+
+                    GridLayout:
+                        id: "Filter_C"
+                        cols: 2
+                        MDBoxLayout:
+                            orientation:"horizontal"
+                            MDLabel:
+                                text: "A"
+                                color: root.color
+                            MDCheckbox:
+                        MDBoxLayout:
+                            orientation:"horizontal"
+                            MDLabel:
+                                text: "B"
+                                color: root.color
+                            MDCheckbox:
+                        MDBoxLayout:
+                            orientation:"horizontal"
+                            MDLabel:
+                                text: "C"
+                                color: root.color
+                            MDCheckbox:
+                        MDBoxLayout:
+                            orientation:"horizontal"
+                            MDLabel:
+                                text: "D"
+                                color: root.color
+                            MDCheckbox:
+                Widget:
+
+            MDBoxLayout:
+                id: mainBoxLayout
+                orientation: "horizontal"
+                background_color: [255,0,0]
+
+                GridLayout:
+                    id: mainGridLayout
+                    cols: root.cols
+                    rows: root.rows
+                    padding: 50
+
+                    Element:
+                        text:"Screenshot"
+                        color: root.color
+                        background_color: [255,0,0]
+                        on_release: root.export()
+                    Element:
+                        text:"Dark"
+                        color: root.color
+                        on_release: app.switch_theme_style("dark")
+                    Element:
+                        text:"Light"
+                        color: root.color
+                        on_release: app.switch_theme_style("light")
+                    Element:
+                        text:"List"
+                        color: root.color
+                        on_release: app.switch_layout_style("list")
+                    Element:
+                        text:"Col2"
+                        color: root.color
+                        on_release: app.switch_layout_style("grid_2")
+                    Element:
+                        text:"Col3"
+                        color: root.color
+                        on_release: app.switch_layout_style("grid_3")
+                    Element:
+                        text:"Col4"
+                        color: root.color
+                        on_release: app.switch_layout_style("grid_4")
+                    Element:
+                        text:"Col5"
+                        color: root.color
+                        on_release: app.switch_layout_style("grid_5")
+                    Element:
+                        text:"test9"
+                        color: root.color
+                    Element:
+                        text:"test10"
+                        color: root.color
+
+<Element@Button>:
+    size_hint_y: None
+    height: 100
+
